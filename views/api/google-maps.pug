@@ -1,5 +1,3 @@
-extends ../layout
-
 block content
   style.
     #map {
@@ -7,20 +5,7 @@ block content
       height: 500px;
     }
 
-  .page-header
-    h2
-      i.fa.fa-google
-      | Google Maps API
-
-  .btn-group.btn-group-justified
-    a.btn.btn-primary(href='https://developers.google.com/maps/documentation/javascript/tutorial', target='_blank')
-      i.fa.fa-check-square-o
-      | Getting Started
-    a.btn.btn-primary(href='https://console.developers.google.com/apis/dashboard', target='_blank')
-      i.fa.fa-laptop
-      | API Console
-
-  h3 Markers Example
+  h3 Carte de nos magasins. 
 
   #map
 
@@ -28,6 +13,7 @@ block content
     var map;
 
     function initMap() {
+<<<<<<< HEAD
     var myLatLng =  { lat: 43.3269942, lng: -0.7532809 };
     var myLat2 = { lat:43.85, lng:1.3333 };
     var myLat3 ={lat:44.0167, lng:-1.35};
@@ -86,4 +72,41 @@ block content
     }
 
   script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyACIPurKhN4KOpPdwWaJ3pfGF9dwE4-XvM&callback=initMap')
+=======
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 48.8588377, lng: 2.2770207},
+          zoom: 6
+        });
+        var infoWindow = new google.maps.InfoWindow({map: map});
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            map.setCenter(pos);
+            map.setZoom(10);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
+
+  script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCQKQ2Aw4bt3b-gPdZieYtu56JjWkE4n3Y&callback=initMap')
+>>>>>>> b95f6d7bb7aa288015b836d730496057d0d4b0eb
 
