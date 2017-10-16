@@ -7,7 +7,7 @@ const shoesSchema = new mongoose.Schema({
     desc: String,
     code_shop: Number,
     available: Boolean,
-    picture: Blob,
+    picture: String
 }, { timestamps: true });
 const Shoes = mongoose.model('Shoes', shoesSchema);
 
