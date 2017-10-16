@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const shopSchema = new mongoose.Schema({
-    name: { type: Number, unique: true },
+    name: { type: String, unique: true },
     latitude: Number,
     longitude: Number,
     mountain: String,
@@ -9,3 +9,7 @@ const shopSchema = new mongoose.Schema({
     id_shop: Number,
     desciption: String,
 }, { timestamps: true });
+
+const Shop = mongoose.model('Shop', shopSchema);
+
+module.exports = Shop;

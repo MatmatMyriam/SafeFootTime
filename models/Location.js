@@ -7,3 +7,6 @@ const locationSchema = new mongoose.Schema({
     date_end: String,
     code_customer: Number,
 }, { timestamps: true });
+const Location = mongoose.model('Location', locationSchema);
+
+module.exports = Location;

@@ -6,3 +6,6 @@ const promoSchema = new mongoose.Schema({
     available: Boolean,
     pourcentage: Number,
 }, { timestamps: true });
+const Promo = mongoose.model('Promo', promoSchema);
+
+module.exports = Promo;

@@ -21,7 +21,7 @@ const sass = require('node-sass-middleware');
 const multer = require('multer');
 
 const upload = multer({ dest: path.join(__dirname, 'uploads') });
-
+require('./fixtures');
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
  */
@@ -30,6 +30,7 @@ dotenv.load({ path: '.env.example' });
 /**
  * Controllers (route handlers).
  */
+const shopController = require('./controllers/shop');
 const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
@@ -136,6 +137,7 @@ app.post('/account/password', passportConfig.isAuthenticated, userController.pos
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 
+app.get('/shop', shopController.getShop);
 /**
  * API examples routes.
  */

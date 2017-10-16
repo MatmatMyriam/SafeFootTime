@@ -1,0 +1,6 @@
+extends layout
+
+block content
+    h3 shop
+        each shop in allshop
+            li #{shop.name}:#{shop.description}
