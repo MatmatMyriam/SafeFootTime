@@ -1,0 +1,9 @@
+extends layout
+
+block content
+
+    h3 shoes
+
+        each shoes in allshoes
+
+            li #{shoes.id}:#{shoes.size},#{shoes.price},#{shoes.desc},#{shoes.code_shop},#{shoes.available},#{shoes.picture}
