@@ -7,7 +7,7 @@ const shopSchema = new mongoose.Schema({
     mountain: String,
     rating: Number,
     id_shop: Number,
-    desciption: String,
+    description: String,
 }, { timestamps: true });
 
 const Shop = mongoose.model('Shop', shopSchema);
