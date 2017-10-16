@@ -9,3 +9,6 @@ const shoesSchema = new mongoose.Schema({
     available: Boolean,
     picture: Blob,
 }, { timestamps: true });
+const Shoes = mongoose.model('Shoes', shoesSchema);
+
+module.exports = Shoes;
