@@ -1,7 +1,4 @@
 /**
- * Created by Myriam on 12/10/2017.
- */
-/**
  * Get /shop
  */
 const Shop = require('../models/Shop.js');
