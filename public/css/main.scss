@@ -68,3 +68,32 @@ textarea {
 .fa {
   margin-right: 6px;
 }
+
+// Style pour la page /shoes
+
+.shoesBox{
+  border : 2px solid black;
+  margin: 10px;
+  padding : 5px;
+}
+
+.tabAllShoes{
+  background: #E0FFFF;
+  padding: 5px;
+  height: 300px;
+}
+
+.tab{
+  float:left;
+  margin-left: 10px;
+}
+
+.tab{
+  width:48%;
+  border : solid;
+}
+
+.imgShoes{
+    height: 100px;
+    float : right;
+}
