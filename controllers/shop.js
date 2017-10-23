@@ -11,3 +11,9 @@ exports.getShop =(req,res) =>{
         res.render('shop', {allshop: docs});
     });
 };
+exports.getRating =(req,res) =>{
+    Shop.find((err, docs) => {
+        res.render('shop', {rating: docs.ra});
+});
+};
+

@@ -1,6 +1,49 @@
 extends layout
 
 block content
-    h3 shop
-        each shop in allshop
-            li #{shop.name}:#{shop.description}
+    h3.h3shop Our shop !
+
+    .row
+        .col-sm-6#divShop
+            each shop in allshop
+                li.titleShop
+                div.item1
+                    img.iconShop(src="/shop.png" alt='iconShop')
+                    span
+                    h5.shopName #{shop.name}
+                    h5.shopDesc #{shop.mountain}
+                div.item
+
+                    - var rating = shop.rating
+                    case rating
+                        when 1
+                            img.iconStar(src="/star-full.png" alt='iconShop')
+                            img.iconStar(src="/star-empty.png" alt='iconShop')
+                            img.iconStar(src="/star-empty.png" alt='iconShop')
+                            img.iconStar(src="/star-empty.png" alt='iconShop')
+                            img.iconStar(src="/star-empty.png" alt='iconShop')
+                        when 2
+                            img.iconStar(src="/star-full.png" alt='iconShop')
+                            img.iconStar(src="/star-full.png" alt='iconShop')
+                            img.iconStar(src="/star-empty.png" alt='iconShop')
+                            img.iconStar(src="/star-empty.png" alt='iconShop')
+                            img.iconStar(src="/star-empty.png" alt='iconShop')
+                        when 3
+                            img.iconStar(src="/star-full.png" alt='iconShop')
+                            img.iconStar(src="/star-full.png" alt='iconShop')
+                            img.iconStar(src="/star-full.png" alt='iconShop')
+                            img.iconStar(src="/star-empty.png" alt='iconShop')
+                            img.iconStar(src="/star-empty.png" alt='iconShop')
+                        when 4
+                            img.iconStar(src="/star-full.png" alt='iconShop')
+                            img.iconStar(src="/star-full.png" alt='iconShop')
+                            img.iconStar(src="/star-full.png" alt='iconShop')
+                            img.iconStar(src="/star-full.png" alt='iconShop')
+                            img.iconStar(src="/star-empty.png" alt='iconShop')
+                        when 5
+                            img.iconStar(src="/star-full.png" alt='iconShop')
+                            img.iconStar(src="/star-full.png" alt='iconShop')
+                            img.iconStar(src="/star-full.png" alt='iconShop')
+                            img.iconStar(src="/star-full.png" alt='iconShop')
+                            img.iconStar(src="/star-full.png" alt='iconShop')
+
