@@ -1,0 +1,45 @@
+.h3shop{
+    font-size:4.8rem;
+    color: royalblue;
+    margin-bottom: 2%;
+}
+#divShop{
+    background-color: #E0FFFF;
+
+}
+.item1{
+    display: flex;
+    flex-direction:row ;
+    color: royalblue;
+}
+.item{
+
+}
+.titleShop{
+    font-size: 4.8rem;
+    width: 100%;
+    display: flex;
+    flex-direction:row ;
+    flex-wrap: wrap;
+    margin: 2% 0 ;
+    list-style: none;
+    border: outset cornflowerblue 2px;
+}
+.iconShop{
+    width: 60px;
+    height: 60px;
+}
+.shopName{
+    margin: 5% 1%;
+    font-size: 1.8em;
+}
+.shopDesc{
+    font-size: 1.5em;
+    margin-left: 40%;
+    margin-top: 5%;
+}
+.iconStar{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 1%;
+}
