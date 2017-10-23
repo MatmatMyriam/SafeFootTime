@@ -2,8 +2,27 @@ extends layout
 
 block content
 
+    - var dispo;
+
     h3 shoes
+        div.tabAllShoes
+            div.tab
+                each shoes in allshoes
+                    div.shoesBox
+                        img.imgShoes(src='https://www.w3schools.com/css/img_lights.jpg')
+                        img.imgShoes(src=shoes.picture)
+                        p shoes.pictures
+                        p Boutique : #{shoes.code_shop}
+                        p #{shoes.desc}
+                        p Pointure : #{shoes.size}   -Commander-
+                        p #{shoes.picture}
+                        p #{shoes.available}
+                        p lol
 
-        each shoes in allshoes
-
-            li #{shoes.id}:#{shoes.size},#{shoes.price},#{shoes.desc},#{shoes.code_shop},#{shoes.available},#{shoes.picture}
+            div.tab
+                each shoes in allshoes
+                    div.shoesBox
+                        p Boutique : #{shoes.code_shop}
+                        p #{shoes.desc}
+                        p Pointure : #{shoes.size}
+        p Lol

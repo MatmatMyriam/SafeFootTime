@@ -17,13 +17,11 @@ fixtures({
 
 fixtures({
     Shoes:[
-        {id: 1, size: 41, price:25, desc:'Beautiful', code_shop:1, available:true, pictures:null},
-        {id: 2, size: 36, price:30, desc:'Burk', code_shop:2, available:false, pictures:null}
+        {id: 1, size: 41, price:25, desc:'Beautiful', code_shop:1, available:true, picture:'pct/testPct.jpg'},
+        {id: 2, size: 36, price:30, desc:'Burk', code_shop:2, available:false, picture:'pct/testPct.jpg'}
     ]
 
     },function (err, data) {
         console.warn(err, data);
     }
 );
-
-
