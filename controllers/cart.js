@@ -1,13 +1,5 @@
-var express = require('express');
-var session = require('express-session');
-
-var app = express();
-app.use(session({shoes:198,type:"Botte"}));
-
-
 exports.showCart =(req,res) =>{
-    var data = ["test","test1"];
-    res.render('cart', {item : data});
+    res.render('cart', {pageData: req.session.shoes});
 };
 
 exports.addCart =(req,res) =>{
