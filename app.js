@@ -31,6 +31,7 @@ dotenv.load({ path: '.env.example' });
  * Controllers (route handlers).
  */
 const shopController = require('./controllers/shop');
+const shoesController = require('./controllers/shoes');
 const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
@@ -138,6 +139,7 @@ app.post('/account/delete', passportConfig.isAuthenticated, userController.postD
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 
 app.get('/shop', shopController.getShop);
+app.get('/shoes', shoesController.getShoes);
 /**
  * API examples routes.
  */
