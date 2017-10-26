@@ -1,11 +1,17 @@
-require('./models/Shop');
-require('./models/Shoes');
+
+const Shop  = require('./models/Shop');
+const Shoes = require('./models/Shoes');
+const {
+    expect
+} = require('chai');
 var mongoose = require('mongoose');
+
 
 var fixtures = require('node-mongoose-fixtures');
 const moment = require('moment');
 
 fixtures.clear();
+
 fixtures({
     Shop: [
           {name:'Magasin1', latitude:1, longitude:0,mountain:'Pyrénée',rating:1, id_shop:1, description:'okokokokoko'},
@@ -19,45 +25,54 @@ fixtures({
     console.warn(err, data);
 });
 
-fixtures({
-    Shoes: [
-        {
-            id: 1,
-            sizes: 41,
-            price: 25,
-            desc: 'Beautiful',
-            code_shop: 1,
-            available: true,
-            picture: 'TestPct.jpg',
-            date_cart: moment().format(),
-            id_user: '59e4cfa50c6c61000f980805',
-        },
-        {
-            id: 2,
-            sizesArray: 40,
-            price: 30,
-            desc: 'Burk',
-            code_shop: 2,
-            available: false,
-            picture: 'TestPct.jpg',
-            date_cart: moment().format(),
-            id_user: '59e4cfa50c6c61000f980805',
-        },
-        {
-            id: 3,
-            sizesArray: 38,
-            price: 30,
-            desc: 'Burk',
-            code_shop: 2,
-            available: false,
-            picture: 'TestPct.jpg',
-            date_cart: moment().format(),
-            id_user: '59e4cfa50c6c61000f980805',
-        }
-    ]
 
-}, function (err, data) {
-    console.warn(err, data);
+var shop= Shop.findOne({name:'Magasin1'},(err, result)=>{
+
+});
+
+var shop2= Shop.findOne({name:'Magasin2'},(err, result)=>{
+
+});
+
+var shop3= Shop.findOne({name:'Magasin3'},(err, result)=>{
+
 });
 
 
+fixtures({
+    Shoes:[
+        {model: 1,
+  size: 45, 
+  price: 25,
+  desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', 
+  code_shop:shop._id,
+  available:true, 
+  picture:'TestPct.jpg',
+  date_cart: moment().format(),
+  id_user: '59e4cfa50c6c61000f980805'
+},
+        {model: 2, 
+         size: 33,
+         price: 25, 
+         desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.',
+         code_shop:shop2._id, 
+         available:true, 
+         picture:'TestPct.jpg',
+        date_cart: moment().format(),
+            id_user: '59e4cfa50c6c61000f980805'},
+        {model: 4, 
+         size: 75, 
+         price: 25, 
+         desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', 
+         code_shop:shop3._id, 
+         available:true,
+         picture:'TestPct.jpg',
+        date_cart: moment().format(),
+            id_user: '59e4cfa50c6c61000f980805'}
+    ]
+
+    },function (err, data) {
+        console.warn(err, data);
+
+    }
+);

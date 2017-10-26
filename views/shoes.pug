@@ -2,27 +2,25 @@ extends layout
 
 block content
 
-    - var dispo;
+    h3.titShoes Our shoes
 
-    h3 shoes
-        div.tabAllShoes
-            div.tab
-                each shoes in allshoes
-                    div.shoesBox
-                        img.imgShoes(src='https://www.w3schools.com/css/img_lights.jpg')
-                        img.imgShoes(src=shoes.picture)
-                        p shoes.pictures
-                        p Boutique : #{shoes.code_shop}
-                        p #{shoes.desc}
-                        p Pointure : #{shoes.size}   -Commander-
-                        p #{shoes.picture}
-                        p #{shoes.available}
-                        p lol
+    .row
+        .col-sm-6#divShoes
+            each shoes in allshoes
+                li.titleShop
+                div.oneShoe
+                    img.imgShoes(src=shoes.picture alt='shoes')
+                    div.headT
+                        - var sho = Shop.findById(#{shoes.code_shop});
+                        h5.shopName Boutique #{sho.name}
+                        - var avlb = shoes.available
+                        case avlb
+                             when true
+                                img.imgShoesAva(src="/avail.png" alt='sh')
+                             when false
+                                img.imgShoesAva(src="/notAvail.gif" alt='sh')
+                    p.shoesDesc #{shoes.desc}
+                    ul.sizesList
 
-            div.tab
-                each shoes in allshoes
-                    div.shoesBox
-                        p Boutique : #{shoes.code_shop}
-                        p #{shoes.desc}
-                        p Pointure : #{shoes.size}
-        p Lol
+
+                    button.btnOrder Order

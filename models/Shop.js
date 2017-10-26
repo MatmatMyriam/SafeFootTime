@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
 
 const shopSchema = new mongoose.Schema({
-    name: { type: String, unique: true },
+    name: String,
     latitude: Number,
     longitude: Number,
     mountain: String,
     rating: Number,
-    id_shop: Number,
     description: String,
 }, { timestamps: true });
 

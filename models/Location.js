@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-const locationSchema = new mongoose.Schema({
-    id_loc: { type: Number, unique: true },
+const locationSchema = Schema({
     final_shop: Number,
     date_start: Number,
     date_end: String,
-    code_customer: Number,
+    code_customer: { type: Schema.Types.ObjectId, ref: 'User' },
 }, { timestamps: true });
 const Location = mongoose.model('Location', locationSchema);
 
