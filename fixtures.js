@@ -1,7 +1,12 @@
-require('./models/Shop');
-require('./models/Shoes');
+const Shop  = require('./models/Shop');
+const Shoes = require('./models/Shoes');
+const {
+    expect
+} = require('chai');
+
 var fixtures = require('node-mongoose-fixtures');
 fixtures.clear();
+
 fixtures({
     Shop: [
 
@@ -16,13 +21,29 @@ fixtures({
     }
 );
 
+
+var shop= Shop.findOne({name:'Magasin1'},(err, result)=>{
+
+});
+
+var shop2= Shop.findOne({name:'Magasin2'},(err, result)=>{
+
+});
+
+var shop3= Shop.findOne({name:'Magasin3'},(err, result)=>{
+
+});
+
+
 fixtures({
     Shoes:[
-        {id: 1, size: 41, price:25, desc:'Beautiful', code_shop:1, available:true, picture:'pct/testPct.jpg'},
-        {id: 2, size: 36, price:30, desc:'Burk', code_shop:2, available:false, picture:'pct/testPct.jpg'}
+        {model: 1, size: 45, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:shop._id, available:true, picture:'TestPct.jpg'},
+        {model: 2, size: 33, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:shop2._id, available:true, picture:'TestPct.jpg'},
+        {model: 4, size: 75, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:shop3._id, available:true, picture:'TestPct.jpg'}
     ]
 
     },function (err, data) {
         console.warn(err, data);
+
     }
 );
