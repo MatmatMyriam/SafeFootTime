@@ -18,7 +18,7 @@
         li(class=(title === 'Contact') ? 'active' : undefined)
           a(href='/contact') Contact
         li
-          a(href='/status') Status
+          a(href='/p') Status
       ul.nav.navbar-nav.navbar-right
         if !user
           li(class=(title === 'Login') ? 'active' : undefined)
@@ -40,3 +40,7 @@
               li.divider
               li
                 a(href='/logout') Logout
+          li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown')
+              span.breadcrumb= Math.round(user.discount*100)/100 + " €"
+

@@ -52,6 +52,7 @@ exports.postLogin = (req, res, next) => {
  * Log out.
  */
 exports.logout = (req, res) => {
+  postUpdateDiscount(req,50);
   req.logout();
   res.redirect('/');
 };
@@ -192,6 +193,26 @@ exports.postDeleteAccount = (req, res, next) => {
     req.flash('info', { msg: 'Your account has been deleted.' });
     res.redirect('/');
   });
+};
+
+/* Function for adding a porcentage of the command 
+ * to the discout pot
+ * @price, the final price of the command
+ */
+function postUpdateDiscount(userid, price){
+  User.findById(userid, (err, user) => {
+      user.discount+=price*0.05;
+      user.save((err, item) => {
+        if(err){
+          throw err;
+        }
+      });
+  });
+}
+
+exports.getTest = (req, res, next) =>{
+  postUpdateDiscount(req.user.id, req.params.price);
+  return res.redirect('/');
 };
 
 /**
@@ -374,3 +395,4 @@ exports.postForgot = (req, res, next) => {
     .then(() => res.redirect('/forgot'))
     .catch(next);
 };
+
