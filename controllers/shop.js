@@ -3,8 +3,10 @@
  */
 const Shop = require('../models/Shop.js');
 
-exports.getShop =(req,res) =>{
+exports.getShop = (req, res) => {
     Shop.find((err, docs) => {
-        res.render('shop', {allshop: docs});
+        res.render('shop', {
+            allshop: docs
+        });
     });
 };
