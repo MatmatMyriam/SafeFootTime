@@ -52,7 +52,6 @@ exports.postLogin = (req, res, next) => {
  * Log out.
  */
 exports.logout = (req, res) => {
-  postUpdateDiscount(req,50);
   req.logout();
   res.redirect('/');
 };
