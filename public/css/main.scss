@@ -69,31 +69,84 @@ textarea {
   margin-right: 6px;
 }
 
-// Style pour la page /shoes
+/***
+ * Style pour la page /shoes
+ */
 
-.shoesBox{
-  border : 2px solid black;
-  margin: 10px;
-  padding : 5px;
+.titShoes{
+  font-size:4.8rem;
+  color: royalblue;
+  margin-bottom: 2%;
 }
 
-.tabAllShoes{
-  background: #E0FFFF;
-  padding: 5px;
-  height: 300px;
+#divShoes{
+  background-color: #E0FFFF;
 }
 
-.tab{
-  float:left;
-  margin-left: 10px;
+.oneShoe{
+  /** display: flex;
+  flex-direction:row ; */
+  color: black;
 }
 
-.tab{
-  width:48%;
-  border : solid;
+
+.titleShop{
+  font-size: 4.8rem;
+  width: 100%;
+  display: flex;
+  flex-direction:row ;
+  flex-wrap: wrap;
+  margin: 2% 0 ;
+  list-style: none;
+  border: outset cornflowerblue 2px;
+}
+
+.shopName{
+  font-size: 1.8em;
+}
+
+.shoesDesc{
+  font-size: 1em;
+  text-align: justify;
 }
 
 .imgShoes{
-    height: 100px;
-    float : right;
+  height: 100px;
+  float : left;
+  padding : 5px;
+}
+.imgShoesAva{
+  height: 30px;
+  padding : 5px;
+}
+.btnOrder{
+  padding:6px 0 6px 0;
+  font:bold 13px Arial;
+  background:#478bf9;
+  color:#fff;
+  border-radius:2px;
+  width:100px;
+  border:none;
+  float:right;
+}
+
+.sizeList{
+  list-style:none;
+  background: white;
+  height:50px;
+  text-align:left;
+  padding:4px 10px;
+  display: inline;
+}
+
+.headT h5{
+  display:inline;
+}
+
+.headT img{
+  float: right;
+}
+
+.headT{
+  margin-bottom: 10px;
 }

@@ -2,6 +2,7 @@
  * GET /
  * Home page.
  */
+
 const Shop = require('../models/Shop.js');
 
 exports.index = (req, res) => {
@@ -10,5 +11,4 @@ exports.index = (req, res) => {
         console.log('TEST#', docs);
     res.render('home', {allshop: docs, title: 'home'});
 });
-
 };
