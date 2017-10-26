@@ -12,6 +12,7 @@ const shoesSchema = new mongoose.Schema({
     picture: String,
     date_cart: Date,
     id_user: { type: Schema.Types.ObjectId, ref: 'User' }
+
 }, { timestamps: true });
 
 const Shoes = mongoose.model('Shoes', shoesSchema);

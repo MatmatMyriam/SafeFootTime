@@ -10,3 +10,9 @@ exports.getShop = (req, res) => {
         });
     });
 };
+
+exports.getRating =(req,res) =>{
+    Shop.find((err, docs) => {
+        res.render('shop', {rating: docs.ra});
+});
+};
