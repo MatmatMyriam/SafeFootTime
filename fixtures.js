@@ -5,10 +5,10 @@ fixtures.clear();
 fixtures({
     Shop: [
 
-        {name:'Magasin1', latitude:1, longitude:0,mountain:'Pyrénée',rating:1, id_shop:1, description:'okokokokoko'},
-        {name:'Magasin2', latitude:2, longitude:0,mountain:'Pyrénée 1',rating:2, id_shop:2, description:'okokokokoko'},
-        {name:'Magasin3', latitude:3, longitude:0,mountain:'Pyrénée 2',rating:4, id_shop:3, description:'okokokokoko'},
-        {name:'Magasin4', latitude:4, longitude:0,mountain:'Pyrénée 3',rating:5, id_shop:4, description:'okokokokoko'}
+        {name:'Notre super magasin', latitude: 43.3269942, longitude:-0.7532809,mountain:'Pyrénée',rating:1, id_shop:1, description:'okokokokoko'},
+        {name:'Lumberjack Party time', latitude:43.85, longitude:1.3333,mountain:'Pyrénée 1',rating:2, id_shop:2, description:'okokokokoko'},
+        {name:'Les t Lumberjack', latitude:44.0167, longitude:-1.35,mountain:'Pyrénée 2',rating:4, id_shop:3, description:'okokokokoko'},
+        {name:'WoodsMan', latitude:44, longitude:-1,mountain:'Pyrénée 3',rating:5, id_shop:4, description:'okokokokoko'}
     ]
 
 },function (err, data) {
@@ -26,3 +26,4 @@ fixtures({
         console.warn(err, data);
     }
 );
+
