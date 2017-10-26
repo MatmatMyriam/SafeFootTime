@@ -194,6 +194,54 @@ exports.postDeleteAccount = (req, res, next) => {
   });
 };
 
+/* Function for adding a porcentage of the command 
+ * to the discout pot
+ * @price, the final price of the command
+ */
+function UpdateDiscount(userid, price){
+  User.findById(userid, (err, user) => {
+      user.discount+=price*0.05;
+      user.save((err) => {
+        if(err){
+          throw err;
+        }
+      });
+  });
+}
+
+/*
+ * async function who use promesses
+ * return the total discount price, this discount is decreased from the user discount
+ */
+function UseDiscount(userid, price){
+  var discount=0;
+  return User.findById(userid, (err, user) =>{
+    if(price/2<user.discount){
+      discount=price/2;
+      console.log(discount);
+      user.discount-=price/2;
+    }
+    else{
+      discount=user.discount;
+      user.discount=0;
+    }
+    return user.save((err)=>{
+      if(err){
+        discount=0;
+        throw err;
+      }
+      return discount;
+    });
+  });
+}
+/*
+exports.GetTest = (req, res, next) =>{
+  UseDiscount(req.user.id, req.params.price).then(function (discount){
+    console.log(discount);
+    return res.redirect('/');
+  });
+};*/
+
 /**
  * GET /account/unlink/:provider
  * Unlink OAuth provider.
@@ -374,3 +422,4 @@ exports.postForgot = (req, res, next) => {
     .then(() => res.redirect('/forgot'))
     .catch(next);
 };
+

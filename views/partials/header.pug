@@ -42,3 +42,7 @@
               li.divider
               li
                 a(href='/logout') Logout
+          li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown')
+              span.breadcrumb= Math.round(user.discount*100)/100 + " €"
+
