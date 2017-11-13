@@ -2,8 +2,15 @@ extends layout
 
 block content
   h1 SafeFootTime
-  p.lead 
-    include api/google-maps.pug
+  p.lead
+
+  .row
+    .col-sm-6#divShop
+      include shop
+
+    .col-sm-6
+      include api/google-maps.pug
+
   hr
   .row
     .col-sm-6

@@ -11,8 +11,8 @@ block content
                 div.oneShoe
                     img.imgShoes(src=shoes.picture alt='shoes')
                     div.headT
-                        - var sho = Shop.findById(#{shoes.code_shop});
-                        h5.shopName Boutique #{sho.name}
+                        // - var sho = Shop.findById(#{shoes.code_shop});
+                        //h5.shopName Boutique #{sho.name}
                         - var avlb = shoes.available
                         case avlb
                              when true

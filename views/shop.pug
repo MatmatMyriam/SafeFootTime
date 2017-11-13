@@ -1,11 +1,9 @@
-extends layout
+
 
 block content
     h3.h3shop Our shop !
 
-    .row
-        .col-sm-6#divShop
-            each shop in allshop
+    each shop in allshop
                 li.titleShop
                 div.item1
                     img.iconShop(src="/shop.png" alt='iconShop')
