@@ -149,10 +149,9 @@ app.post('/account/profile', passportConfig.isAuthenticated, userController.post
 app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
-app.get('/cart', passportConfig.isAuthenticated, cartController.showCart);
-app.get('/shop', shopController.getShop);
+app.get('/cart/:id', passportConfig.isAuthenticated, cartController.showCart);
 app.get('/shoes', shoesController.getShoes);
-
+app.get('/shop/:id', shoesController.getShoes);
 /**
  * API examples routes.
  */

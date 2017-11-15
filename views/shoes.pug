@@ -2,14 +2,15 @@ extends layout
 
 block content
 
-    h3.titShoes Our shoes
+    h3.titShoes #{shop.name}
 
     .row
         .col-sm-6#divShoes
             each shoes in allshoes
                 li.titleShop
                 div.oneShoe
-                    img.imgShoes(src=shoes.picture alt='shoes')
+                    h4 Model  #{shoes.model}
+                    img.imgShoes(src="/"+shoes.picture alt='shoes')
                     div.headT
                         // - var sho = Shop.findById(#{shoes.code_shop});
                         //h5.shopName Boutique #{sho.name}
@@ -19,8 +20,12 @@ block content
                                 img.imgShoesAva(src="/avail.png" alt='sh')
                              when false
                                 img.imgShoesAva(src="/notAvail.gif" alt='sh')
+
+
                     p.shoesDesc #{shoes.desc}
-                    ul.sizesList
+                    if avlb
+                        p.shoesSize La taille disponnible est : #{shoes.size}
+                        a.btn(href="/cart/" + shoes.id) Commander
+                    else
+                        p.shoesSize La taille disponnible est indisponible
 
-
-                    button.btnOrder Order
