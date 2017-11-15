@@ -33,8 +33,4 @@ Shop.find({ "_id" : "5a0abea837d69c20049522df" }, function (err, shop) {
     });
 });*/
 
-var shop= Shop.find();
-shop.where('_id', "5a0abea837d69c20049522df");
-console.log(shop);
-
 };
