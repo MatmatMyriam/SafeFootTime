@@ -11,7 +11,6 @@ var fixtures = require('node-mongoose-fixtures');
 const moment = require('moment');
 
 fixtures.reset();
-fixtures.reset();
 
 var shop = {};
 
