@@ -1,50 +1,79 @@
-require('./models/Shop');
-require('./models/Shoes');
+
+const Shop  = require('./models/Shop');
+const Shoes = require('./models/Shoes');
+const {
+    expect
+} = require('chai');
 var mongoose = require('mongoose');
+
 
 var fixtures = require('node-mongoose-fixtures');
 const moment = require('moment');
 
-fixtures.clear();
+fixtures.reset();
+
+var shop = {};
+
 fixtures({
     Shop: [
-          {name:'Magasin1', latitude:1, longitude:0,mountain:'Pyrénée',rating:1, id_shop:1, description:'okokokokoko'},
-        {name:'Magasin2', latitude:2, longitude:0,mountain:'Pyrénée 1',rating:2, id_shop:2, description:'okokokokoko'},
-        {name:'Magasin3', latitude:3, longitude:0,mountain:'Pyrénée 2',rating:4, id_shop:3, description:'okokokokoko'},
-        {name:'Magasin4', latitude:4, longitude:0,mountain:'Pyrénée 3',rating:5, id_shop:4, description:'okokokokoko'}
+        {idShop:'Shop1',name:'Notre super magasin', latitude: 43.3269942, longitude:-0.7532809,mountain:'Pyrénée',rating:1, description:'okokokokoko'},
+        {idShop:'Shop2',name:'Lumberjack Party time', latitude:43.85, longitude:1.3333,mountain:'Pyrénée 1',rating:2, description:'okokokokoko'},
+        {idShop:'Shop3',name:'Les t Lumberjack', latitude:44.0167, longitude:-1.35,mountain:'Pyrénée 2',rating:4, description:'okokokokoko'},
+        {idShop:'Shop4',name:'WoodsMan', latitude:44, longitude:-1,mountain:'Pyrénée 3',rating:5, description:'okokokokoko'}
     ]
 
 
 }, function (err, data) {
-    console.warn(err, data);
+
+    shop = data[0];
+
 });
 
+
 fixtures({
-    Shoes: [
-        {
-            id: 1,
-            sizes: 41,
+    Shoes:[
+        {model: 1,
+  size: 43,
+  price: 25,
+  desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.',
+  code_shop:'Shop1',
+  available:true,
+  picture:'TestPct.jpg',
+  date_cart: moment().format(),
+  id_user: '59e4cfa50c6c61000f980805'
+},
+        {model: 1,
+            size: 41,
             price: 25,
-            desc: 'Beautiful',
-            code_shop: 1,
-            available: true,
-            picture: 'TestPct.jpg',
+            desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.',
+            code_shop:'Shop1',
+            available:false,
+            picture:'TestPct.jpg',
+            date_cart: moment().format(),
+            id_user: '5a0d5a350eb4a8000f6915fe'
+        },
+        {model: 1,
+            size: 44,
+            price: 25,
+            desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.',
+            code_shop:'Shop1',
+            available:true,
+            picture:'TestPct.jpg',
             date_cart: moment().format(),
             id_user: '5a0d5a350eb4a8000f6915fe',
         },
-        {
-            id: 2,
-            sizesArray: 40,
-            price: 30,
-            desc: 'Burk',
-            code_shop: 2,
-            available: false,
-            picture: 'TestPct.jpg',
-            date_cart: moment().format(),
-            id_user: '5a0d5a350eb4a8000f6915fe',
-        },
-        {
-            id: 3,
+      
+       {model: 2,
+        size: 33,
+        price: 25,
+        desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.',
+        code_shop:'Shop1',
+        available:true,
+        picture:'TestPct.jpg',
+        date_cart: moment().format(),
+        id_user: '59e4cfa50c6c61000f980805'},
+      
+        {   id: 3,
             sizesArray: 38,
             price: 30,
             desc: 'Burk',
@@ -53,11 +82,21 @@ fixtures({
             picture: 'TestPct.jpg',
             date_cart: moment().format(),
             id_user: '5a0d5a350eb4a8000f6915fe',
-        }
+        },
+   
+    {model: 4,
+     size: 75,
+     price: 25,
+     desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.',
+     code_shop:'Shop2',
+     available:true,
+     picture:'TestPct.jpg',
+    date_cart: moment().format(),
+        id_user: '59e4cfa50c6c61000f980805'}
     ]
 
-}, function (err, data) {
-    console.warn(err, data);
-});
+    },function (err, data) {
 
 
+    }
+);

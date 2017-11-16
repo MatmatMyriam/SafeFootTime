@@ -21,6 +21,7 @@ const foursquare = require('node-foursquare')({
   }
 });
 
+
 foursquare.Venues = bluebird.promisifyAll(foursquare.Venues);
 foursquare.Users = bluebird.promisifyAll(foursquare.Users);
 
@@ -620,7 +621,9 @@ exports.postPinterest = (req, res, next) => {
 };
 
 exports.getGoogleMaps = (req, res) => {
-  res.render('api/google-maps', {
-    title: 'Google Maps API'
-  });
+    Shop.find((err, docs) => {
+      console.log('TEST#', docs);
+        res.render('api/google-maps', {allshop: docs, title: 'Google Maps API'});
+});
+
 };
