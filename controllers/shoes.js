@@ -13,6 +13,7 @@ exports.getShoes = (req, res) =>{
      * Shoes.find((err, docs) =>{
         res.render('shoes',{allshoes: docs});
     });*/
+
     var shop = {}
     var allshoes = {}
      var id = req.params.id;
@@ -20,11 +21,13 @@ exports.getShoes = (req, res) =>{
          shop = docs[0];
          var idShop = docs[0].idShop;
          Shoes.find({"code_shop" : idShop},function (err,docs) {
+
              allshoes = docs;
              res.render('shoes',{shop: shop,allshoes:allshoes});
          });
 
      });
+
 
 /**
 Shop.find({ "_id" : "5a0abea837d69c20049522df" }, function (err, shop) {
@@ -33,8 +36,6 @@ Shop.find({ "_id" : "5a0abea837d69c20049522df" }, function (err, shop) {
     });
 });*/
 
-var shop= Shop.find();
-shop.where('_id', "5a0abea837d69c20049522df");
-console.log(shop);
+
 
 };
