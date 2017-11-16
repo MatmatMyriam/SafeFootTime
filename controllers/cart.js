@@ -18,7 +18,7 @@ exports.showCart = (req, res) => {
     //Executé requete
     Cart.find(query, function (err, result) {
         if (err) throw err;
-            res.render('cart', {
+        res.render('cart', {
             pageData: result
         });
     });
@@ -26,10 +26,18 @@ exports.showCart = (req, res) => {
 
 exports.addCart = (req, res) => {
     
+    Cart.update({
+        model: req.params.id
+    }, {
+        $set: {
+            "id": req.user.id,
+            "date_cart": moment().format(),
+        }
+    })
 };
 
 exports.delCart = (req, res) => {
-
+    
 };
 
 exports.finishCart = (req, res) => {

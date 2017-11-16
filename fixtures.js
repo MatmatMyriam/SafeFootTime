@@ -1,9 +1,6 @@
 
 const Shop  = require('./models/Shop');
 const Shoes = require('./models/Shoes');
-const {
-    expect
-} = require('chai');
 var mongoose = require('mongoose');
 
 
