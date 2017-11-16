@@ -36,6 +36,5 @@ Shop.find({ "_id" : "5a0abea837d69c20049522df" }, function (err, shop) {
     });
 });*/
 
-
-
 };
+
