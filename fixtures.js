@@ -30,7 +30,7 @@ fixtures({
             available: true,
             picture: 'TestPct.jpg',
             date_cart: moment().format(),
-            id_user: '59e4cfa50c6c61000f980805',
+            id_user: '5a0d5a350eb4a8000f6915fe',
         },
         {
             id: 2,
@@ -41,7 +41,7 @@ fixtures({
             available: false,
             picture: 'TestPct.jpg',
             date_cart: moment().format(),
-            id_user: '59e4cfa50c6c61000f980805',
+            id_user: '5a0d5a350eb4a8000f6915fe',
         },
         {
             id: 3,
@@ -52,7 +52,7 @@ fixtures({
             available: false,
             picture: 'TestPct.jpg',
             date_cart: moment().format(),
-            id_user: '59e4cfa50c6c61000f980805',
+            id_user: '5a0d5a350eb4a8000f6915fe',
         }
     ]
 
