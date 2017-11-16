@@ -1,4 +1,5 @@
 const Cart = require('../models/Shoes.js');
+const Location = require('../models/Location.js');
 const moment = require('moment');
 const mongoose = require('mongoose');
 
@@ -25,7 +26,7 @@ exports.showCart = (req, res) => {
 };
 
 exports.addCart = (req, res) => {
-    
+
     Cart.update({
         model: req.params.id
     }, {
@@ -37,9 +38,14 @@ exports.addCart = (req, res) => {
 };
 
 exports.delCart = (req, res) => {
-    
+
 };
 
 exports.finishCart = (req, res) => {
-
+    Location.insertOne({
+        final_shop: req.params.final,
+        date_start: moment().format(),
+        date_end: req.params.date,
+        code_customer: req.user.id,
+    })
 };
