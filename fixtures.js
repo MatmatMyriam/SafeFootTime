@@ -39,7 +39,7 @@ fixtures({
   code_shop:'Shop1',
   available:true,
   picture:'TestPct.jpg',
-  date_cart: moment().format(),
+  date_cart: moment("20120620","YYYYMMDD").fromNow(),
   id_user: '59e4cfa50c6c61000f980805'
 },
         {model: 1,
@@ -60,7 +60,7 @@ fixtures({
             available:true,
             picture:'TestPct.jpg',
             date_cart: moment().format(),
-            id_user: '5a0d5a350eb4a8000f6915fe',
+            id_user: '5a0d5a350eb4a8000f6915fe'
         },
       
        {model: 2,
@@ -91,7 +91,7 @@ fixtures({
      code_shop:'Shop2',
      available:true,
      picture:'TestPct.jpg',
-    date_cart: moment().format(),
+    date_cart: moment("20120620","YYYYMMDD").fromNow(),
         id_user: '59e4cfa50c6c61000f980805'}
     ]
 
