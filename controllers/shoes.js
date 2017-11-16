@@ -1,5 +1,6 @@
 const Shoes = require('../models/Shoes.js');
 const Shop = require('../models/Shop.js');
+const moment =require('moment');
 
 exports.getShoes = (req, res) =>{
 /**console.log('ouiiiiiiiiiiiiiii');
@@ -20,7 +21,18 @@ exports.getShoes = (req, res) =>{
      Shop.find({"_id" : id}, function (err, docs) {
          shop = docs[0];
          var idShop = docs[0].idShop;
-         Shoes.find({"code_shop" : idShop},function (err,docs) {
+
+         //recup seulement si pas dans le panier
+         var value = moment().subtract(10,'minutes').format();
+         //Chercher shoes en fonction de la date
+         var query = {
+             code_shop : idShop,
+             date_cart: {
+                 $lte: value,
+             },
+         };
+         console.log(query);
+         Shoes.find(query,function (err,docs) {
 
              allshoes = docs;
              res.render('shoes',{shop: shop,allshoes:allshoes});
