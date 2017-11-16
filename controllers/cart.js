@@ -42,7 +42,18 @@ exports.delCart = (req, res) => {
 };
 
 exports.finishCart = (req, res) => {
+    
+    Cart.update({
+        model: req.params.idshoes
+    }, {
+        $set: {
+            "id": req.user.id,
+            "available": false;
+        }
+    })
+    
     Location.insertOne({
+        code_Shoes: req.params.idshoes, 
         final_shop: req.params.final,
         date_start: moment().format(),
         date_end: req.params.date,
