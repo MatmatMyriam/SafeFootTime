@@ -29,6 +29,7 @@ exports.showCart = (req, res) => {
 
 exports.addCart = (req, res) => {
 
+    var allshoes = {}
 
     Cart.findOneAndUpdate({
         _id: ObjectId(req.params.id)
@@ -47,7 +48,46 @@ exports.addCart = (req, res) => {
         console.log(doc);
     });
     // On renvois la page du panier
-    
+
+    //Date actuel
+    var value = moment().subtract(10, 'minutes').format();
+    //Chercher item client en fonction de la date
+    var query = {
+        id_user: mongoose.Types.ObjectId(req.user.id),
+        date_cart: {
+            $gte: value,
+        },
+    };
+
+    //Executé requete
+    Cart.find(query, function (err, result) {
+        if (err) throw err;
+        allshoes = result;
+        res.render('cart', {
+            pageData: allshoes
+        });
+    });
+};
+
+exports.delCart = (req, res) => {
+
+    //Methode pour supprimer la chaussure du panier
+
+    Cart.findOneAndUpdate({
+        _id: ObjectId(req.params.id)
+    }, {
+        $set: {
+            id_user: req.user.id,
+            date_cart: moment().subtract(20, 'minutes').format(),
+        }
+    }, {
+        new: true
+    }, function (err, doc) {
+        if (err) {
+            console.log("Something wrong when updating data!");
+        }
+    });
+    //On Retourne la page du panier
     //Date actuel
     var value = moment().subtract(10, 'minutes').format();
     //Chercher item client en fonction de la date
@@ -67,26 +107,9 @@ exports.addCart = (req, res) => {
     });
 };
 
-exports.delCart = (req, res) => {
-    
-    //Methode pour supprimer la chaussure du panier
-    
-    Cart.findOneAndUpdate({
-        _id: ObjectId(req.params.id)
-    }, {
-        $set: {
-            id_user: req.user.id,
-            date_cart: moment().subtract(20, 'minutes').format(),
-        }
-    }, {
-        new: true
-    }, function (err, doc) {
-        if (err) {
-            console.log("Something wrong when updating data!");
-        }
-    });
-    //On Retourne la page du panier
-   //Date actuel
+exports.finishCart = (req, res) => {
+
+    //Date actuel
     var value = moment().subtract(10, 'minutes').format();
     //Chercher item client en fonction de la date
     var query = {
@@ -96,41 +119,23 @@ exports.delCart = (req, res) => {
         },
     };
 
-    //Executé requete
-    Cart.find(query, function (err, result) {
-        if (err) throw err;
-        res.render('cart', {
-            pageData: result
+    /*
+
+        item.updateOne({
+            $set: {
+                id_user: req.user.id,
+                available: false
+            }
         });
-    });
-};
 
-exports.finishCart = (req, res) => {
+        Location.insertOne({
+            code_Shoes: item._id,
+            date_start: moment().format(),
+            date_end: moment().add(10, 'days'),
+            code_customer: req.user.id,
+        })
     
-    
-    //Methode pour updade la chaussure et la rendre non disponible
-    
-    Cart.findOneAndUpdate({
-        _id: ObjectId(req.params.idshoes)
-    }, {
-        $set: {
-            id_user: req.user.id,
-            available: false,
-        }
-    }, {
-        new: true
-    }, function (err, doc) {
-        if (err) {
-            console.log("Something wrong when updating data!");
-        }
-    });
-    
+        */
 
-    Location.insertOne({
-        code_Shoes: req.params.idshoes,
-        final_shop: req.params.final,
-        date_start: moment().format(),
-        date_end: req.params.date,
-        code_customer: req.user.id,
-    })
-};
+    res.render('test', {});
+}
