@@ -1,6 +1,19 @@
 extends layout
 
 block content
-    h3 Cart
-        p Ceci contiendra l'affichage du panier
-        span #{pageData}
+        p Voici votre panier :
+        .row
+            .col-sm-6#divShoes
+                each shoes in pageData
+                    li.titleShop
+                    div.oneShoe.oneCard
+                        h4 Model  #{shoes.model}
+                        img.imgShoes(src="/"+shoes.picture alt='shoes')
+                        div.headT
+                        p.shoesDesc #{shoes.desc}
+                        p.shoesSize La taille est : #{shoes.size}
+                        a.btn(href="/cartDelete/" + shoes.id) Supprimer du panier
+        .row
+            .finnishbutton
+                a.btn(href="/cartFinish/" + pageData) Valider le panier
+                
