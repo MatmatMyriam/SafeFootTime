@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 var fixtures = require('node-mongoose-fixtures');
 const moment = require('moment');
 
-fixtures.reset();
+//fixtures.reset();
 
 var shop = {};
 
@@ -60,76 +60,14 @@ fixtures({
 
 
 fixtures({
-    Shoes: [
-        {
-            model: 1,
-            size: 43,
-            price: 25,
-            desc: 'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.',
-            code_shop: 'Shop1',
-            available: true,
-            picture: 'TestPct.jpg',
-            date_cart: moment().format(),
-            id_user: '59e4cfa50c6c61000f980805'
-},
-        {
-            model: 1,
-            size: 41,
-            price: 25,
-            desc: 'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.',
-            code_shop: 'Shop1',
-            available: false,
-            picture: 'TestPct.jpg',
-            date_cart: moment().format(),
-            id_user: '5a0d5a350eb4a8000f6915fe'
-        },
-        {
-            model: 1,
-            size: 44,
-            price: 25,
-            desc: 'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.',
-            code_shop: 'Shop1',
-            available: true,
-            picture: 'TestPct.jpg',
-            date_cart: moment().format(),
-            id_user: '5a0d5a350eb4a8000f6915fe',
-        },
 
-        {
-            model: 2,
-            size: 33,
-            price: 25,
-            desc: 'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.',
-            code_shop: 'Shop1',
-            available: true,
-            picture: 'TestPct.jpg',
-            date_cart: moment().format(),
-            id_user: '59e4cfa50c6c61000f980805'
-        },
+    Shoes:[
+        {model: 1, size: 43, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop1', available:true, picture:'TestPct.jpg', date_cart:"2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'},
+        {model: 1, size: 41, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop1', available:false, picture:'TestPct.jpg', date_cart: moment().format(), id_user: '5a0d5a350eb4a8000f6915fe'},
+        {model: 1, size: 44, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop1', available:true, picture:'TestPct.jpg', date_cart: moment().format(), id_user: '5a0d5a350eb4a8000f6915fe'},
+        {model: 2, size: 33, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop1', available:true, picture:'TestPct.jpg', date_cart: moment().format(), id_user: '59e4cfa50c6c61000f980805'},
+        {model: 4, size: 75, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop2', available:true, picture:'TestPct.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'}
 
-        {
-            id: 3,
-            sizesArray: 38,
-            price: 30,
-            desc: 'Burk',
-            code_shop: 2,
-            available: false,
-            picture: 'TestPct.jpg',
-            date_cart: moment().format(),
-            id_user: '5a0d5a350eb4a8000f6915fe',
-        },
-
-        {
-            model: 4,
-            size: 75,
-            price: 25,
-            desc: 'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.',
-            code_shop: 'Shop2',
-            available: true,
-            picture: 'TestPct.jpg',
-            date_cart: moment().format(),
-            id_user: '59e4cfa50c6c61000f980805'
-        }
     ]
 
 }, function (err, data) {
