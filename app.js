@@ -154,7 +154,9 @@ app.get('/cart/', passportConfig.isAuthenticated, cartController.showCart);
 app.get('/cartDelete/:id', passportConfig.isAuthenticated, cartController.delCart);
 app.get('/shoes', shoesController.getShoes);
 app.get('/shop/:id', shoesController.getShoes);
+app.get('/shop/:id/:priceOrder', shoesController.getShoesOrder);
 app.get('/cartFinish/:data', passportConfig.isAuthenticated, cartController.finishCart);
+
 /**
  * API examples routes.
  */

@@ -9,7 +9,7 @@ var now = new Date();
 
 exports.showCart = (req, res) => {
     //Date actuel
-    var value = moment().subtract(10, 'minutes').format();
+    var value = moment().subtract(1, 'minutes').format();
     //Chercher item client en fonction de la date
     var query = {
         id_user: mongoose.Types.ObjectId(req.user.id),
