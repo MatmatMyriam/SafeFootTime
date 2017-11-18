@@ -152,6 +152,8 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 app.get('/cart/:id', passportConfig.isAuthenticated, cartController.showCart);
 app.get('/shoes', shoesController.getShoes);
 app.get('/shop/:id', shoesController.getShoes);
+app.get('/shop/:id/:priceOrder', shoesController.getShoesOrder);
+
 /**
  * API examples routes.
  */

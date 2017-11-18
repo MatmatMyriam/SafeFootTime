@@ -54,7 +54,7 @@ fixtures({
         },
         {model: 1,
             size: 44,
-            price: 25,
+            price: 40,
             desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.',
             code_shop:'Shop1',
             available:true,
@@ -86,7 +86,7 @@ fixtures({
    
     {model: 4,
      size: 75,
-     price: 25,
+     price: 42,
      desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.',
      code_shop:'Shop2',
      available:true,
