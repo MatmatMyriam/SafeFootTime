@@ -12,6 +12,7 @@ exports.showCart = (req, res) => {
     var value = moment().subtract(1, 'minutes').format();
     //Chercher item client en fonction de la date
     var query = {
+        available: true,
         id_user: mongoose.Types.ObjectId(req.user.id),
         date_cart: {
             $gte: value,
@@ -118,6 +119,43 @@ exports.finishCart = (req, res) => {
             $gte: value,
         },
     };
+
+
+    Cart.find(query, function (err, doc) {
+        console.log(doc);
+        doc.forEach(function (item) {
+            
+            console.log('test :');
+            console.log(item.desc);
+            console.log('Objectid :');
+            console.log(ObjectId(item._id));
+
+            Cart.findOneAndUpdate({
+                _id: ObjectId(item._id)
+            }, {
+                $set: {
+                    id_user: req.user.id,
+                    available: false,
+                }
+            }, {
+                new: true
+            }, function (err, doc) {
+                if (err) {
+                    console.log("Something wrong when updating data!");
+                }
+            });
+
+            Location.create({
+                code_Shoes: item._id,
+                date_start: moment().format(),
+                date_end: moment().add(10, 'days'),
+                code_customer: req.user.id,
+            }, function (err, res) {
+                console.log(res);
+                console.log(err);
+            })
+        });
+    });
 
     /*
 
