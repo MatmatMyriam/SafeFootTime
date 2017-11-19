@@ -20,7 +20,7 @@ fixtures({
             longitude: -0.7532809,
             mountain: 'Pyrénée',
             rating: 1,
-            description: 'okokokokoko'
+            description: 'Un grand magasin est un commerce de centre ville caractérisé par une grande surface de vente répartie sur plusieurs niveaux, un assortiment très large essentiellement basé sur l\'équipement de la maison et de la personne et par des ventes réalisées en libre service assisté.'
         },
         {
             idShop: 'Shop2',
@@ -29,7 +29,7 @@ fixtures({
             longitude: 1.3333,
             mountain: 'Pyrénée 1',
             rating: 2,
-            description: 'okokokokoko'
+            description: 'Un grand magasin est un commerce de centre ville caractérisé par une grande surface de vente répartie sur plusieurs niveaux, un assortiment très large essentiellement basé sur l\'équipement de la maison et de la personne et par des ventes réalisées en libre service assisté.'
         },
         {
             idShop: 'Shop3',
@@ -38,7 +38,7 @@ fixtures({
             longitude: -1.35,
             mountain: 'Pyrénée 2',
             rating: 4,
-            description: 'okokokokoko'
+            description: 'Un grand magasin est un commerce de centre ville caractérisé par une grande surface de vente répartie sur plusieurs niveaux, un assortiment très large essentiellement basé sur l\'équipement de la maison et de la personne et par des ventes réalisées en libre service assisté.'
         },
         {
             idShop: 'Shop4',
@@ -47,7 +47,7 @@ fixtures({
             longitude: -1,
             mountain: 'Pyrénée 3',
             rating: 5,
-            description: 'okokokokoko'
+            description: 'Un grand magasin est un commerce de centre ville caractérisé par une grande surface de vente répartie sur plusieurs niveaux, un assortiment très large essentiellement basé sur l\'équipement de la maison et de la personne et par des ventes réalisées en libre service assisté.'
         }
     ]
 
@@ -62,11 +62,22 @@ fixtures({
 fixtures({
 
     Shoes:[
-        {model: 1, size: 43, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop1', available:true, picture:'TestPct.jpg', date_cart:"2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'},
-        {model: 1, size: 41, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop1', available:false, picture:'TestPct.jpg', date_cart: moment().format(), id_user: '5a0d5a350eb4a8000f6915fe'},
-        {model: 1, size: 44, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop1', available:true, picture:'TestPct.jpg', date_cart: moment().format(), id_user: '5a0d5a350eb4a8000f6915fe'},
-        {model: 2, size: 33, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop1', available:true, picture:'TestPct.jpg', date_cart: moment().format(), id_user: '59e4cfa50c6c61000f980805'},
-        {model: 4, size: 75, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop2', available:true, picture:'TestPct.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'}
+        {model: 1, size: 43, price: 40, desc:'Une chaussure de marche est une chaussure spécialement conçue pour la marche à pied ou la randonnée pédestre.', code_shop:'Shop1', available:true, picture:'TestPct.jpg', date_cart:"2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'},
+        {model: 2, size: 41, price: 50, desc:'Une bonne chaussure possède une semelle amortissant les chocs afin de soulager votre corps et une semelle adhérente pour vous sentir en sécurité. Plus le terrain pratiqué est accidenté, plus la chaussure doit être rigide.', code_shop:'Shop1', available:false, picture:'TestPct2.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '5a0d5a350eb4a8000f6915fe'},
+        {model: 3, size: 44, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop1', available:true, picture:'TestPct3.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '5a0d5a350eb4a8000f6915fe'},
+        {model: 4, size: 30, price: 30, desc:'Cela regroupe tout ce qui permet à la chaussure de se différencier : système de serrage, cramponnage, guêtre intégrée... autant d\'atouts pouvant faire la différence selon votre pratique.', code_shop:'Shop1', available:true, picture:'TestPct4.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'},
+        {model: 1, size: 39, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop2', available:true, picture:'TestPct.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'},
+        {model: 2, size: 40, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop2', available:true, picture:'TestPct2.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'},
+        {model: 3, size: 42, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop2', available:true, picture:'TestPct3.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'},
+        {model: 4, size: 45, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop2', available:true, picture:'TestPct4.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'},
+        {model: 1, size: 40, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop3', available:true, picture: 'TestPct.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'},
+        {model: 2, size: 42, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop3', available:true, picture:'TestPct2.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'},
+        {model: 3, size: 45, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop3', available:true, picture:'TestPct3.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'},
+        {model: 4, size: 50, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop3', available:true, picture:'TestPcT4.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'},
+        {model: 1, size: 40, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop4', available:true, picture:'TestPct.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'},
+        {model: 2, size: 39, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop4', available:true, picture:'TestPct2.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'},
+        {model: 3, size: 43, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop4', available:true, picture:'TestPct3.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'},
+        {model: 4, size: 41, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop4', available:true, picture:'TestPct4.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'}
 
     ]
 

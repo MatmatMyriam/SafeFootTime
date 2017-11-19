@@ -3,9 +3,15 @@ extends layout
 block content
 
     h3.titShoes #{shop.name}
+    h4 Votre magasin est :
+    p.text-center #{shop.description}
 
     .row
-        .col-sm-6#divShoes
+        .col-sm-12#divShoes
+
+            if (allshoes == 0)
+                p.alert-info.err.text-center Ce magasin ne dispose plus de chaussure, nous sommes désolé !
+
             each shoes in allshoes
                 li.titleShop
                 div.oneShoe
@@ -28,4 +34,3 @@ block content
                         a.btn(href="/cart/" + shoes.id) Commander
                     else
                         p.shoesSize La taille disponnible est indisponible
-
