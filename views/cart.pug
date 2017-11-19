@@ -1,9 +1,12 @@
 extends layout
 
 block content
-        p Voici votre panier :
+        h3 Voici votre panier :
+
         .row
-            .col-sm-6#divShoes
+            .col-sm-12#divShoes
+                if (pageData == 0)
+                    p.alert-info.err Votre panier est vide
                 each shoes in pageData
                     li.titleShop
                     div.oneShoe.oneCard
