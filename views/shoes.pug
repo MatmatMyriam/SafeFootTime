@@ -2,6 +2,9 @@ extends layout
 
 block content
 
+    a.btn(href="/shop/" + shop.id + "/orderPrice") sort by price
+    a.btn(href="/shop/" + shop.id + "/orderPriceDesc") sort by price descending
+
     h3.titShoes #{shop.name}
     h4 Votre magasin est :
     p.text-center #{shop.description}
@@ -34,3 +37,5 @@ block content
                         a.btn(href="/cart/" + shoes.id) Commander
                     else
                         p.shoesSize La taille disponnible est indisponible
+
+                    p.shoesSize #{shoes.price}€

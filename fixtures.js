@@ -79,6 +79,7 @@ fixtures({
         {model: 3, size: 43, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop4', available:true, picture:'TestPct3.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'},
         {model: 4, size: 41, price: 25, desc:'Avec une protection anti-coupures haute technologie classe 1, ce mdifficiles.', code_shop:'Shop4', available:true, picture:'TestPct4.jpg', date_cart: "2016-11-16 11:09:44.000Z", id_user: '59e4cfa50c6c61000f980805'}
 
+
     ]
 
 }, function (err, data) {
