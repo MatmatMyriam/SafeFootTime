@@ -44,6 +44,7 @@ git clone --depth=1 https://github.com/MatmatMyriam/SafeFootTime
 
 # Install NPM dependencies
 npm install
+npm install node-mongoose-fixtures
 
 # Then simply start your app
 node app.js
