@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	h3 Paiement
+		if discount
+			p Prix total sans réduction : #{total} €
+			//- var totp=total-discount
+			p Prix total avec réduction : #{discount} €
+		else
+			p Prix total : #{total} €
+
+	.finnishbutton
+		a.btn(href="/cartFinish") Finaliser la commande

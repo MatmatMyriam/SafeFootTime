@@ -17,6 +17,11 @@ block content
                         p.shoesSize La taille est : #{shoes.size}
                         a.btn(href="/cartDelete/" + shoes.id) Supprimer du panier
         .row
-            .finnishbutton
-                a.btn(href="/cartFinish/" + pageData._id) Valider le panier
+            form(method='POST', action='/payment')
+                input(type='hidden', name='_csrf', value=_csrf)
+                p.check Utiliser la réduction 
+                    input(id='usediscount', name='usediscount', type='checkbox')
+
+                .form-group
+                    button.btn.btn-primary(type='submit') Valider le panier
                 
