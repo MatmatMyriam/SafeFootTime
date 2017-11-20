@@ -1,3 +1,8 @@
+/**
+ * Il est possible d'ajouter des shoes dans le panier et ce pendant 10min sinon elle réaparaise dans le magasin,
+ * il est ensuite possible de valider ce panier et elle ne seront plus dans le magasin ,
+ * ce qui permettra de passer au payement.
+ */
 const Cart = require('../models/Shoes.js');
 const Location = require('../models/Location.js');
 const Shop = require('../models/Shop.js');
