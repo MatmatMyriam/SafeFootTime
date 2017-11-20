@@ -43,6 +43,7 @@ const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 const cartController = require('./controllers/cart');
+const paymentController =  require('./controllers/payment');
 
 /**
  * API keys and Passport configuration.
@@ -155,7 +156,8 @@ app.get('/cartDelete/:id', passportConfig.isAuthenticated, cartController.delCar
 app.get('/shoes', shoesController.getShoes);
 app.get('/shop/:id', shoesController.getShoes);
 app.get('/shop/:id/:priceOrder', shoesController.getShoesOrder);
-app.get('/cartFinish/:data', passportConfig.isAuthenticated, cartController.finishCart);
+app.get('/cartFinish', passportConfig.isAuthenticated, cartController.finishCart);
+app.post('/payment', passportConfig.isAuthenticated, paymentController.getPayment);
 
 /**
  * API examples routes.

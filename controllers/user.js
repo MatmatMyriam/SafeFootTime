@@ -209,6 +209,8 @@ function UpdateDiscount(userid, price){
   });
 }
 
+module.exports.UpdateDiscount=UpdateDiscount;
+
 /*
  * async function who use promesses
  * return the total discount price, this discount is decreased from the user discount
@@ -234,6 +236,7 @@ function UseDiscount(userid, price){
     });
   });
 }
+
 /*
 exports.GetTest = (req, res, next) =>{
   UseDiscount(req.user.id, req.params.price).then(function (discount){
